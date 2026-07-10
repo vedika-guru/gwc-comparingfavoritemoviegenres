@@ -1,34 +1,53 @@
-# Comparing Favorite Movie Genres through Data Visualizations
+# Comparing Movie Genres 
 
-### Project Requirements
-Your project should:
-- Use a variable to store and print the data of your favorite movie.
-- Use .loc to filter the data set to a genre, and store it in a new variable.
-- Calculate the min, max, mean, and median of a column.
-- Print how the min, max mean, and median compare to your favorite movie's value.
-- Create a histogram and use a print statement to describe it.
-- Create a scatter plot and use a print statement to describe the relationship between two variables.
+A data analysis project that compares my favorite movie — **Harry Potter and the Chamber of Secrets** — to other Science Fiction & Fantasy movies using Rotten Tomatoes data. Built as part of a Girls Who Code "Talking Data" activity.
 
-### Extensions
-You can extend your project further by:
-- Plot your favorite movie
-- Explore more data
-- Visualize data creatively
+## What It Does
 
-###  Attributions
-The rotten_tomatoes_movies.csv data was originally scrapped by Stefano Leone and is available on Kaggle for CC0:Public Domain Use: https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset?select=rotten_tomatoes_movies.csv
+The program walks through a full mini data analysis, step by step:
 
-*If you used any code, ideas, images, or resources from another person or group of people, tell us about it here. Make sure it is in the public domain, has a license that allows you to use it, or is one of your own.
+1. **Loads the data** — reads a Rotten Tomatoes movie dataset with pandas.
+2. **Investigates the data** — prints out the movie titles in the dataset.
+3. **Filters the data** — finds my favorite movie's row and builds a subset of all movies in the **Science Fiction & Fantasy** genre.
+4. **Describes the data** — calculates the min, max, mean, and median audience ratings for the genre and explains how my favorite movie compares.
+5. **Visualizes the data** — displays two charts with matplotlib:
+   - A **histogram** of audience ratings for Science Fiction & Fantasy movies
+   - A **scatter plot** of audience rating vs. critic rating, showing a positive correlation between the two
 
----
+The program is interactive — press **Enter** at each prompt to move on to the next section.
 
-## File Overview
+## Files
 
-### ← main.py
-This is where you will write your main program.
+| File | Description |
+| --- | --- |
+| `main.py` | The analysis program |
+| `Rotten Tomatoes Movie Data Spreadsheet - rotten_tomatoes_movies.csv` | The Rotten Tomatoes movie dataset |
 
-### ← README.md
-README.md file give you more documentation and information about a program. They are super helpful for describing what a program should do, any issues you've encountered, changes you want to make, and more. 
+> **Note:** `main.py` reads the dataset as `rotten_tomatoes_movies.csv`. If the CSV still has its longer download name, rename it to `rotten_tomatoes_movies.csv` first.
 
-### ← rotten_tomatoes_movies.csv
-This is a csv file containing data scraped from Rotten Tomatoes by Stefano Leone. The data was made modified to make student usability easier. Modifications include: Creating the year_released column based on original_release_date, dropping NA values, and selecting out the columns: movie_title, year_released, critic_rating, audience_rating, genres.
+## Requirements
+
+- Python 3
+- pandas
+- matplotlib
+
+Install the libraries with:
+
+```bash
+pip install pandas matplotlib
+```
+
+## How to Run
+
+```bash
+python main.py
+```
+
+Follow the prompts in the terminal, and close each chart window to continue to the next one.
+
+## Key Findings
+
+- There are hundreds of Science Fiction & Fantasy movies in the dataset.
+- Harry Potter and the Chamber of Secrets is rated **above both the mean and median** audience rating for its genre — 72 points above the lowest-rated movie and only 20 points below the highest.
+- Most movies in the genre have medium-to-high audience ratings.
+- Audience ratings and critic ratings show a **positive correlation** — movies audiences love, critics tend to like too (with a few outliers).
